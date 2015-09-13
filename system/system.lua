@@ -67,6 +67,8 @@ ns.build = function(self)
 
   local components = self:buildGraph()
 
+  local frames = {}
+
   for unitName, unit in pairs(self.units) do
 
     local root = self.components.root:new(unitName)
@@ -79,6 +81,10 @@ ns.build = function(self)
 
     end
 
+    table.insert(frames, root)
+
   end
+
+  return frames
 
 end
