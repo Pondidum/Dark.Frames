@@ -11,8 +11,28 @@ ns.units = {
   },
 }
 
+local componentMeta = {
+
+  requires = {},
+
+  new = function(self, unit)
+
+    local this = {
+      unit = unit
+    }
+
+    setmetatable(this, { __index = self })
+    this:ctor()
+
+    return this
+  end,
+
+  ctor = function(self)
+  end,
+}
+
 ns.create = function(self, config)
-  return setmetatable({}, { __index = config })
+  return setmetatable(config, { __index = componentMeta })
 end
 
 ns.buildGraph = function(self)
