@@ -1,0 +1,10 @@
+## Interface: 60000
+## Title: Dark.Frames
+## Author: Darkend / DarkStorm / Zenedar / EU
+## Version: 0.0.0
+## Notes: Dark unit frames system
+## RequiredDeps: Dark
+
+initialise.lua
+
+run.lua
