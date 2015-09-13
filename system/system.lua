@@ -5,7 +5,9 @@ ns.components = {
 
 ns.units = {
   player = {
-    requires = { "root", "health" }
+    requires = {
+      health = true
+    }
   },
 }
 

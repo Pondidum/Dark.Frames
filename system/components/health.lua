@@ -3,7 +3,7 @@ local addon, ns = ...
 ns.components.health = ns:create({
 
   requires = {
-    "root"
+    root = true,
   },
 
   ctor = function(self)
