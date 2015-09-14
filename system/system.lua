@@ -1,8 +1,5 @@
 local addon, ns = ...
 
-local events = ns.eventStore:new()
-ns.components = {}
-
 ns.units = {
   player = {
     requires = {
@@ -11,49 +8,6 @@ ns.units = {
   },
 }
 
-local componentMeta = {
-
-  requires = {},
-  events = {},
-
-  new = function(self, unit)
-
-    local this = {
-      unit = unit
-    }
-
-    setmetatable(this, { __index = self })
-    this:ctor()
-    this:registerEvents()
-
-    return this
-  end,
-
-  ctor = function(self)
-  end,
-
-  registerEvents = function(self)
-
-    local wrapper = function(e, ...)
-      self:onEvent(e, ...)
-    end
-
-    for eventName, active in pairs(self.events) do
-      events:register(eventName, wrapper)
-    end
-
-  end,
-
-  onEvent = function(self, event, ...)
-    self:beforeUpdate(event, ...)
-    self:update(event, ...)
-    self:afterUpdate(event, ...)
-  end,
-}
-
-ns.create = function(self, config)
-  return setmetatable(config, { __index = componentMeta })
-end
 
 ns.buildGraph = function(self)
 

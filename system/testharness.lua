@@ -7,6 +7,7 @@ print("Done.")
 
 local files = {
   "eventStore.lua",
+  "components.lua",
   "system.lua",
   "components\\root.lua",
   "components\\health.lua",

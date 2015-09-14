@@ -1,6 +1,6 @@
 local addon, ns = ...
 
-ns.eventStore = {
+local eventStore = {
 
   new = function(self)
 
@@ -35,3 +35,5 @@ ns.eventStore = {
   end,
 
 }
+
+ns.eventStore = eventStore:new()
