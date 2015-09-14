@@ -6,6 +6,12 @@ ns.components.health = ns:create({
     root = true,
   },
 
+  events = {
+    'UNIT_HEALTH_FREQUENT',
+    'UNIT_MAXHEALTH',
+    'UNIT_CONNECTION',
+  },
+
   ctor = function(self)
     local frame = CreateFrame("StatusBar", "$parentHealth", self.root)
     local background = frame:CreateTexture(nil, "BORDER")

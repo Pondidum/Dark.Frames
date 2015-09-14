@@ -6,6 +6,7 @@ require("wowframeapi")
 print("Done.")
 
 local files = {
+  "eventStore.lua",
   "system.lua",
   "components\\root.lua",
   "components\\health.lua",
