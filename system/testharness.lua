@@ -35,7 +35,10 @@ print("Building interface...")
 local frames = ns:build()
 print("Done.")
 
-
 for i, frame in ipairs(frames) do
   print(i, frame.unit, frame.health)
 end
+
+
+print("firing event")
+RaiseEvent("UNIT_HEALTH_FREQUENT")

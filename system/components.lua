@@ -29,7 +29,7 @@ local componentMeta = {
       self:onEvent(e, ...)
     end
 
-    for eventName, active in pairs(self.events) do
+    for i, eventName in ipairs(self.events) do
       eventStore:register(eventName, wrapper)
     end
 
@@ -39,6 +39,15 @@ local componentMeta = {
     self:beforeUpdate(event, ...)
     self:update(event, ...)
     self:afterUpdate(event, ...)
+  end,
+
+  beforeUpdate = function()
+  end,
+
+  update = function()
+  end,
+
+  afterUpdate = function()
   end,
 }
 
