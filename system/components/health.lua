@@ -17,7 +17,7 @@ ns.components.health = ns:create({
     local background = frame:CreateTexture(nil, "BORDER")
     local text = frame:CreateFontString(nil, "OVERLAY")
 
-    frame:SetAllPoints(self.root)
+    frame:SetAllPoints(self.root.frame)
     background:SetAllPoints(frame)
     text:SetPoint("RIGHT", frame, "RIGHT", -4, 0)
 
