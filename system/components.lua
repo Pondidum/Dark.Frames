@@ -4,6 +4,8 @@ local eventStore = ns.eventStore
 
 local componentMeta = {
 
+  colors = ns.colors,
+
   requires = {},
   events = {},
 
