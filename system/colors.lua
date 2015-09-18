@@ -3,7 +3,7 @@ local addon, ns = ...
 ns.colors = {
 
   disconnected = { .6, .6, .6 },
-  tapped = { .6, .6, .6},
+  tapped = { .6, .6, .6 },
   health = { 49/255, 207/255, 37/255 },
 
   reaction = {
@@ -29,6 +29,6 @@ ns.colors = {
     WARLOCK     = { 148/255, 130/255, 201/255 },
     WARRIOR     = { 199/255, 156/255, 110/255 },
     MONK        = {   0/255, 255/255, 151/255 },
-  }m
+  }
 
 }

@@ -6,11 +6,13 @@ require("wowframeapi")
 print("Done.")
 
 local files = {
+  "colors.lua",
   "eventStore.lua",
   "components.lua",
   "system.lua",
   "components\\root.lua",
   "components\\health.lua",
+  "adjustments\\unitColor.lua"
 }
 
 print("Loading files...")

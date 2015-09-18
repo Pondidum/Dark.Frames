@@ -9,10 +9,11 @@ local componentMeta = {
   requires = {},
   events = {},
 
-  new = function(self, unit)
+  new = function(self, root, unit)
 
     local this = {
-      unit = unit
+      root = root,
+      unit = unit,
     }
 
     setmetatable(this, { __index = self })

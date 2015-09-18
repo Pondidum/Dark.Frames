@@ -45,12 +45,14 @@ ns.build = function(self)
 
   for unitName, unit in pairs(self.units) do
 
-    local root = self.components.root:new(unitName)
+    local root = self.components.root:new(nil, unitName)
 
     for i, name in ipairs(components) do
 
       if unit.requires[name] then
-        root[name] = self.components[name]:new()
+
+        root[name] =  self.components[name]:new(root, unitName)
+
       end
 
     end
