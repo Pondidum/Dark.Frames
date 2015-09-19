@@ -3,7 +3,9 @@ local addon, ns = ...
 ns.units = {
   player = {
     requires = {
-      health = true
+      health = true,
+      power = true,
+      name = true,
     }
   },
 }
