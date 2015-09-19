@@ -13,7 +13,7 @@ ns.components.health = ns:create({
   },
 
   ctor = function(self)
-    local frame = CreateFrame("StatusBar", "$parentHealth", self.root)
+    local frame = CreateFrame("StatusBar", "$parentHealth", self.root.frame)
     local background = frame:CreateTexture(nil, "BORDER")
     local text = frame:CreateFontString(nil, "OVERLAY")
 
