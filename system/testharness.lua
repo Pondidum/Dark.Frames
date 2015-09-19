@@ -12,6 +12,7 @@ local files = {
   "system.lua",
   "components\\root.lua",
   "components\\health.lua",
+  "components\\mana.lua",
   "adjustments\\unitColor.lua"
 }
 
