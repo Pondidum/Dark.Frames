@@ -18,10 +18,14 @@ ns.components.power = ns:create({
     local parent = self.root.frame
 
     local frame = CreateFrame("StatusBar", "$parentPower", parent)
+    local background = frame:CreateTexture(nil, "BORDER")
+
     frame:SetPoint("TOPLEFT", parent, "BOTTOMLEFT", 0, 0)
     frame:SetPoint("TOPRIGHT", parent, "BOTTOMRIGHT", 0, 0)
+    background:SetAllPoints(frame)
 
     self.frame = frame
+    self.background = background
   end,
 
   update = function(self)
@@ -38,16 +42,20 @@ ns.components.power = ns:create({
   end,
 
   afterUpdate = function(self)
+    self:setColor()
+  end,
 
-    local powerType, powerToken, altRed, altGreen, altBlue = UnitPowerType(self.unit)
+  setColor = function(self)
+
+    local powerType, powerToken, red, green, blue = UnitPowerType(self.unit)
     local color = self.colors.power[powerToken]
 
     if color then
-      self.frame:SetStatusBarColor(unpack(color))
-    else
-      self.frame:SetStatusBarColor(altRed, altGreen, altBlue)
+      red, green, blue = unpack(color)
     end
 
-  end,
+    self.frame:SetStatusBarColor(red, green, blue)
+    self.background:SetVertexColor(red * 0.3, green * 0.3, blue * 0.3)
+  end
 
 })
